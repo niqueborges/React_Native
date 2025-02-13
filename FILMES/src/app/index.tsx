@@ -1,5 +1,4 @@
 import { Text, View, StyleSheet, TextInput } from "react-native";
-import foundation from "@expo/vector-icons/Foundation";
 import Foundation from "@expo/vector-icons/Foundation";
 
 export default function Index() {
@@ -14,7 +13,7 @@ export default function Index() {
           placeholderTextColor="#FFF"
         />
 
-        <Foundation name="magnifying-glass" size={24} color="black" />
+        <Foundation name="magnifying-glass" size={24} color="#FFF" />
       </View>
     </View>
   );
@@ -33,7 +32,16 @@ export const styles = StyleSheet.create({
     fontSize: 24,
     textAlign: "center",
   },
-  headerInput: {},
-  input: {},
+  headerInput: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    backgroundColor: "#3A3F47",
+    padding: 10,
+    borderRadius: 16,
+    marginTop: 20,
+  },
+  input: {
+    flex: 1,
+  },
 
 });
