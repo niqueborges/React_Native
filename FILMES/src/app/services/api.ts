@@ -6,5 +6,5 @@ export const api = axios.create({
         api_key: "a2fdd650fb8c6b72e33e0c63e843bb95",
         language: "pt-BR",
         include_adult: false,
-    }
+    };
 })
