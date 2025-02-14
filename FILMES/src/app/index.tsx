@@ -1,7 +1,29 @@
 import { Text, View, StyleSheet, TextInput } from "react-native";
 import Foundation from "@expo/vector-icons/Foundation";
+import {useEffect, useState } from "react";
+import { api } from "./services/api";
+
+interface MovieDrops {
+  id: number;
+  title: string;
+  overview: string;
+  poster_path: string;
+}
+
 
 export default function Index() {
+  const [movies, setMovies] = useState<MovieDrops[]>([]);
+
+  const loadedMovies = async () => {
+    const response = await api.get("/movie/popular");
+
+    console.log(response.data.results);
+  };
+
+  useEffect(() => {
+    loadedMovies();
+  }, []);
+
   return (
     <View style={styles.container}>
       <Text style={styles.title}>O que você quer assistir?</Text>
